@@ -10,11 +10,10 @@ for line in f:
     l = line.strip()
     if l[0] == '>':
         name = l[1:]
+        sequences[name] = ''
     else:
-        seq = l
-        sequences[name] = seq
-        name = ''
-        seq = ''
+        sequences[name] = sequences[name] + l
+
 print(sequences)
 
 result = []
